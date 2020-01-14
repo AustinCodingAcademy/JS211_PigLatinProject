@@ -122,10 +122,8 @@ function igPay (word){
 document.getElementById("display-element").innerHTML=outputHTML;
   }
 
-
-function pigLatin (word){
-var newWord;
-word=word.trim().toLowerCase();
+function translateWord(word) {
+var newWord = [];
 var characters = word.split('');
   if (vowels.includes(characters[0])){
     characters.push("yay");
@@ -149,6 +147,22 @@ characters.push(characters.shift());
 characters.push("ay");
 newWord= characters.join('');
 return newWord;
+  }
+
+
+function pigLatin (word){
+var newWord =[];
+word=word.trim().toLowerCase();
+if (word.indexOf(' ')>-1) {
+newWord=word.split(' ');
+var rebuiltSentence = [];
+for (let i = 0;i<newWord.length;i++){
+  let translatedWord = translateWord(newWord[i]);
+  rebuiltSentence.push(translatedWord.charAt(0).toUpperCase()+ translatedWord.slice(1));
+}
+return (rebuiltSentence.join(' '));
+} else return(translateWord(word));
+
 }
 
 
@@ -187,6 +201,10 @@ if (typeof describe === 'function') {
       assert.equal(pigLatin('HeLlO '), 'ellohay');
       assert.equal(pigLatin(' RoCkEt'), 'ocketray');
     });
+    it ('Should separate two words and return them together', () => {
+      assert.equal(pigLatin('Hop Fest'),'Ophay Estfay');
+    });
+    
   });
 } else {
 
