@@ -10,12 +10,30 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
+//pigLatin('car') //=> 'arcay'
+//pigLatin('create') //=> 'eatecray'
+//pigLatin('pony') //=> 'onypay'
+//pigLatin('egg') //=> 'eggyay'
+//let word = 'car';
 const pigLatin = (word) => {
 
-  // Your code here
+  // Your code here 
+  let firstPosition = firstVowel(word);
+  if(firstPosition > 0){
+    return word.slice(firstPosition) + word.slice(0, firstPosition) + 'ay';
+  } 
+  return word + 'yay';
+ 
+ }
 
-}
+function firstVowel(word){
+    for (let i=0; i<word.length; i++){
+      if('aeiou'.indexOf(word[i]) !== -1){
+        return i;
+      }
+    }
+  }
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
