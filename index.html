@@ -2,14 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="main.js"></script>
+    <title>Pig Latin</title>
+    <script src="./main.js"></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <hr/>
-    <div id="display-element"></div>
-    <button onclick="displayDate()">Click Me</button>
-    <hr/>
+    <h1>Pig Latin Converter</h1>
+    <h2>Engter your word to be translated into Pig Latin</h2>
+    <p> </p>
+    <label for="word">Enter a word: </label>
+    <input type="text" id="word" name="word" />
+    </br>
+    <button onclick="getPrompt()">Submit Word</button>
+    <p id="pigLat"></p>
   </body>
 </html>
