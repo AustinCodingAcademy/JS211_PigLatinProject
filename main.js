@@ -11,8 +11,16 @@ const rl = readline.createInterface({
 });
 
 
-const pigLatin = (word) => {
 
+const pigLatin = (word) => {
+  let value =""
+  let vowel =['a','e', 'i', 'o', 'u']
+  let value = word.toLowerCase().trim() .split("")
+if (let i = 0; word === vowel) {
+  return Word.concat('yay')
+
+  let word = .split(""); 
+}
   // Your code here
 
 }
