@@ -13,17 +13,27 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
-  let value =""
-  let vowel =['a','e', 'i', 'o', 'u']
-  let value = word.toLowerCase().trim() .split("")
-if (let i = 0; word === vowel) {
-  return Word.concat('yay')
-
-  let word = .split(""); 
-}
+  let vowels = ["a", "e", "i", "o", "u"];
+  let finalWord = "";
+  // scrub the data
+  let cleanWord = word.toLowerCase().trim();
+  // if word begins with vowel add 'yay'
+  if (vowels.indexOf(cleanWord[0]) > -1) {
+    finalWord = cleanWord + "yay";
   // Your code here
-
+  return finalWord;
 }
+// if word begins with consonant
+else {
+  // run through string until we find the first vowel. What match() does is it returns an array of all the character indexes that match our regular expression pattern. Our pattern looks at any character that is a vowel. If there are no vowels, then we assign firstMatch the value of 0.
+  let firstMatch = cleanWord.match(/[aeiou]/g) || 0;
+  // index of the first vowel found in the string using indexOf()
+  let vowelIndex = cleanWord.indexOf(firstMatch[0]);
+  //string without the consonant beginning + the consonant + ay
+  finalWord = cleanWord.substring(vowelIndex) + cleanWord.substring(0, vowelIndex) + "ay";
+  return finalWord;
+}
+};
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
