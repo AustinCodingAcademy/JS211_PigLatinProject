@@ -12,10 +12,50 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
-
-  // Your code here
+  if(firstPosition > 0){
+    return word.slice(firstPosition) + word.slice(0, firstPosition) + 'ay';
+  } 
+  return word + 'yay';
 
 }
+
+function firstVowel(word){
+    for (let i=0; i<word.length; i++){
+      if('aeiou'.indexOf(word[i]) !== -1){
+        return i;
+      }
+    }
+  }
+  function translatePigLatin(str){
+    let firstPosition = firstVowelPosition(str);
+    if(firstPosition > 0){
+      return str.slice(firstPosition) + str.slice(0, firstPosition) + 'ay';
+    } 
+    return str + 'yay';
+  } 
+  function firstVowelPosition(str){
+    for (i=0; i<str.length; i++){
+      if('aeiou'.indexOf(str[i]) !== -1){
+      return i;
+}
+}
+}
+console.log(translatePigLatin('consonants'));   
+  
+// word = word.toLowerCase().trim();
+// if (vowels(word.charAt(0)))
+// return word + "yay";
+
+  function vowels(word) {
+    if (
+  word === 'a' ||
+  word === 'e' ||
+  word === 'i' ||
+  word === 'o' ||
+  word === 'u'
+    )
+    return true;
+    else return false; }
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
