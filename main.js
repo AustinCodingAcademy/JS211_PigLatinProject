@@ -10,18 +10,20 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
+// main function
 const pigLatin = (word) => {
 
   word = word.trim()
   word = word.toLowerCase()
   const isVowel = ['a','e','i','o','u']
+  // splitting the input word for better use of the loop
 
   let wordSplitter = word.split('')
 
   let firstLetter = wordSplitter[0]
 
   console.log(firstLetter)
+  // checking if the first letter is indeed a vowel
 
   if (isVowel.includes(firstLetter)) {
     let pigLatinWord = word + 'yay'
