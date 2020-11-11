@@ -10,13 +10,47 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
+// main function
 const pigLatin = (word) => {
 
-  // Your code here
+  word = word.trim()
+  word = word.toLowerCase()
+  const isVowel = ['a','e','i','o','u']
+  // splitting the input word for better use of the loop
+
+  let wordSplitter = word.split('')
+
+  let firstLetter = wordSplitter[0]
+
+  console.log(firstLetter)
+  // checking if the first letter is indeed a vowel
+
+  if (isVowel.includes(firstLetter)) {
+    let pigLatinWord = word + 'yay'
+    return pigLatinWord
+  }
+
+  for(let i = 0; i < wordSplitter.length ; i++) {
+    let letter = wordSplitter[i]
+      if (isVowel.includes(letter)) {
+      // grab all the letters smaller than i;
+      const consonants = wordSplitter.splice(0, i)
+      // const consonants = ['c', 'h']
+      //           0    1   2  
+      // split: ['e', 'a', 't']
+      wordSplitter.splice(wordSplitter.length, 0, ...consonants)
+      // split: ['e', 'a', 't', 'c', 'h']
+      let finishedWord = wordSplitter.join('') + 'ay'
+      // let pigLatinConsonant = split + consonants + 'ay'
+      return finishedWord
+      }
+  }
+
+
+
+
 
 }
-
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
 // to close it ctrl + C
