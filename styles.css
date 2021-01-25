@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.section{
+    height: 400px;
+    font-size: 30px;
+    position: relative;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.section h1 {
+    position: absolute;
+    margin: 0;
+    top: 30%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+}
+.section input{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    font-size: 15px;
+}
+
+.section .input-btn{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 8%;
+    font-size: 15px;
+}
+
+.input-btn:hover{
+    background-color: red;
+}
