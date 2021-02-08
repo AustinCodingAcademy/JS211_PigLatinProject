@@ -10,18 +10,29 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+function myFunction(){
+
+  let input = document.getElementById('word').value; 
+  console.log(input);
+
+  let output = pigLatin(input); 
+  console.log(output); 
+
+  let outputDisplay = document.getElementById('output').innerHTML = output; 
+}
 
 function pigLatin(word){
 
   //if input is not of string type then return undefined, must be word. 
+  
   if(typeof word !== 'string'){
     return 'undefined, must be a word'; 
-  }
+  } 
 
   word = word.toLowerCase().trim(); //makes input lowercase and takes away whitespace. 
   const beginningConsonants = []; //create empty array variable to store beginning consonants
   let stringToArray = word.split(''); //split the string into an array of letters 
-
+  let translatedWord = ''; 
 
   //create for loop to iterate over each letter in the array 
   for(let i = 0; i < stringToArray.length; i++){
@@ -37,19 +48,19 @@ function pigLatin(word){
     }
   }
 
+  
+
   // if input word starts with a vowel then take new stringToArr var and add 'yay' to the end. 
   if(word[0] === 'a' || word[0] === 'e' || word[0] === 'i' || word[0] === 'o' || word[0] === 'u'){
-    return stringToArray.concat(['y','a','y']).join('');
+    translatedWord += stringToArray.concat(['y','a','y']).join('');
+    return translatedWord; 
     //if input word starts with a consonant then take new stringToArr var and add the consonants and then 'ay' to the end. 
   }else{
-    return stringToArray.concat(beginningConsonants).concat(['a','y']).join(''); 
+    translatedWord += stringToArray.concat(beginningConsonants).concat(['a','y']).join(''); 
+    return translatedWord; 
   }
+  
 }
-
-let r = pigLatin('   create');
-console.log('translated word:', r);
-
-
 
 
 const getPrompt = () => {
