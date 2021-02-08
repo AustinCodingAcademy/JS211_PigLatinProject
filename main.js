@@ -18,7 +18,7 @@ function myFunction(){
   let output = pigLatin(input); 
   console.log(output); 
 
-  let outputDisplay = document.getElementById('output').innerHTML = output; 
+  document.getElementById('output').innerHTML = output; 
 }
 
 function pigLatin(word){
@@ -61,6 +61,14 @@ function pigLatin(word){
   }
   
 }
+
+function myClear(){
+
+  document.getElementById('output').innerHTML = ''; 
+  document.getElementById('word').value = ''; 
+ 
+}
+
 
 
 const getPrompt = () => {
