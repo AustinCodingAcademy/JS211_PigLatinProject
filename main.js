@@ -10,52 +10,94 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+let vowels = ['a','e','i','o','u']; 
+function pigLatin(word){
+  word = word.trim().toLowerCase()
+  let vowelPosition = 0
+    if (vowels.includes(word[0])){
+      return word + "yay"
+    } else {
+      for (let letter of word) {
+        if (vowels.includes(letter)){
+          vowelPosition = word.indexOf(letter)
+      break;
 
-const pigLatin = (word) => {
-  if(firstPosition > 0){
-    return word.slice(firstPosition) + word.slice(0, firstPosition) + 'ay';
-  } 
-  return word + 'yay';
-
-}
-
-function firstVowel(word){
-    for (let i=0; i<word.length; i++){
-      if('aeiou'.indexOf(word[i]) !== -1){
-        return i;
+        }
       }
+      return word.slice(vowelPosition) + word.slice(0,vowelPosition) + 'ay'
     }
-  }
-  function translatePigLatin(str){
-    let firstPosition = firstVowelPosition(str);
-    if(firstPosition > 0){
-      return str.slice(firstPosition) + str.slice(0, firstPosition) + 'ay';
-    } 
-    return str + 'yay';
-  } 
-  function firstVowelPosition(str){
-    for (i=0; i<str.length; i++){
-      if('aeiou'.indexOf(str[i]) !== -1){
-      return i;
-}
-}
-}
-console.log(translatePigLatin('consonants'));   
-  
-// word = word.toLowerCase().trim();
-// if (vowels(word.charAt(0)))
-// return word + "yay";
+}// pigLatin()
+// const myPigLatin = (artichoke) => {
+//   if(firstPosition > 0) {
+//     return artichoke.slice(firstPosition) + artichoke.slice(0, firstPosition) + 'yay';
+//   } 
+//   return artichoke + 'yay';
 
-  function vowels(word) {
-    if (
-  word === 'a' ||
-  word === 'e' ||
-  word === 'i' ||
-  word === 'o' ||
-  word === 'u'
-    )
-    return true;
-    else return false; }
+// }
+
+// function firstVowel(artichoke){
+//     for (let i=0; i<artichoke.length; i++){
+//       if('aeiou'.indexOf(word[i]) !== -1){
+//         return firstVowel;
+//       }
+//     }
+//   }
+//   function translatePigLatin(str){
+//     let firstPosition = firstVowelPosition(str);
+//     if(firstPosition > 0){
+//       return str.slice(firstPosition) + str.slice(0, firstPosition) + 'ay';
+//     } 
+//     return str + 'yay';
+//   } 
+//   function firstVowelPosition(str){
+//     for (let i=0; i <str.length; i++)
+//       if('aeiou'.indexOf(str[i]) !== -1){
+//       return i;
+
+// }
+// }
+// console.log(translatePigLatin('consonants'));   
+  
+// // word = word.toLowerCase().trim();
+// // if (vowels(word.charAt(0)))
+// // return word + "yay";
+
+//   function indexOfFirstVowel (word) {
+//   for (let i = 0; i < word.length; i++) {
+
+  
+//   if (word[i] == "a" || word[i] == "e" || word[i] == "i" || word[i] == "o" ||  word[i] == "o")   
+//     return word[i]; 
+//   }
+// const pigLatin = () => {
+//   let finalWord;
+//   let endChar = "";
+//   let word = document.querySelector("#word").value
+//   word = word.trim().toLowerCase();
+//   let index = indexOfFirstVowel(word);
+//   if (index == 0) {
+//     document.querySelector("#pigLatinWord").innerHTML = word + "yay";
+//   } else {
+//     endChar = word.slice(0, index) 
+//     word = word.substring(index)
+//     finalWord = word + endChar + "ay"
+//     document.querySelector("#pigLatinWord").innerHTML = finalWord;
+//   }
+  
+// }
+
+// function indexOfFirstVowel(word) {
+// for (let i = 0; i < word.length; i++) {
+//     if (word[i] == "a" || 
+//         word[i] == "e" || 
+//         word[i] == "i" || 
+//         word[i] == "o" ||   
+//         word[i] == "o") {
+//           return i;
+//     }
+//   }
+// }
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
@@ -95,8 +137,6 @@ if (typeof describe === 'function') {
   getPrompt();
 
 }
-
-
 
 
 
