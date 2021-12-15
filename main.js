@@ -18,7 +18,7 @@ function myFunction(){
   let output = pigLatin(input); 
   console.log(output); 
 
-  document.getElementById('output').innerHTML = output; 
+  document.getElementById('output').value = output; 
 }
 
 function pigLatin(word){
@@ -64,7 +64,7 @@ function pigLatin(word){
 
 function myClear(){
 
-  document.getElementById('output').innerHTML = ''; 
+  document.getElementById('output').value = ''; 
   document.getElementById('word').value = ''; 
  
 }
@@ -118,3 +118,6 @@ if (typeof describe === 'function') {
 // 1. if word begins with a vowel send to one function: adds "yay"
 // 2. if word begins with a consonant send to another function: splices off beginning, returns word with new ending.
 // 3. if multiple words, create array of words, loop over them, sending them to different functions and creating a new array with the new words.
+
+
+
