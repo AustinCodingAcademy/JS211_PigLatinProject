@@ -1,0 +1,35 @@
+body {
+    background-image: url(./christopher-carson-i4XLJmlYit4-unsplash\ \(1\).jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.titleContainer {
+    font-family: 'Noto Serif Display';
+    color: white;
+    font-size: larger;
+    font-weight:700;
+    letter-spacing: 4px;
+}
+
+hr {
+    color: white;
+}
+
+#word_input_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+#translate {
+    margin-right: 30px;
+}

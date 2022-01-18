@@ -2,14 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="main.js"></script>
+    <title>Pig Latin Translator</title>
+    <script src="./main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@200&family=Roboto:wght@100&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <div class="titleContainer">
+      <h1>Pig Latin Translator</h1>
+    </div>
     <hr/>
-    <div id="display-element"></div>
-    <button onclick="displayDate()">Click Me</button>
     <hr/>
+    <div id="word_input_box">
+      <div class="input-group flex-nowrap w-25">
+        <span class="input-group-text" id="addon-wrapping">English Word</span>
+        <input id="word" value="" type="text" class="form-control" placeholder="..." aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+    </div>
+    <br>
+    <div class="button_container">
+      <button id="translate" type="button" class="btn btn-info btn-md" onclick="myFunction()">Translate</button>
+      <button type="button" class="btn btn-info btn-md" onclick="myClear()">Clear</button>
+    </div>
+    <br><br>
+    <div id="word_input_box">
+      <div class="input-group flex-nowrap w-25">
+        <span class="input-group-text" id="addon-wrapping">Pig Latin Word</span>
+        <input id="output" value="" type="text" class="form-control" placeholder="..." aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+    </div>
   </body>
 </html>
