@@ -10,10 +10,30 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
-const pigLatin = (word) => {
-
-  // Your code here
+  const userWord = "Hello";
+  const pigla = "ay";
+  console.log(userWord.slice(0,1));
+  console.log(userWord.slice(1));
+  
+     const pigLatin = () => {
+      if (userWord.length > 0){
+      const vowels = ["a","e","i","o","u"];
+      const firstLetter = userWord.slice(0,1);
+      const sLast = userWord.slice(1);
+  
+        if (firstLetter === "a" || firstLetter === "e" || firstLetter === "i" || firstLetter === "o" || firstLetter === "u") {
+          output = userWord + pigla;
+        }
+  
+        else {
+          output = sLast + firstLetter + pigla;
+        }
+        return output
+    }		
+    
+      };
+      const answer = pigLatin();
+      console.log(answer)
 
 }
 
