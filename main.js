@@ -12,6 +12,24 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
+  let vowels=["a","e","i","o","u"];// was going to user or's but switched to array method includes
+  let wrd=word.trim().toLowerCase();
+  console.log(wrd)
+  if(vowels.includes(wrd[0])){
+    return wrd+"yay"
+  }
+  else{
+    for(let i=0;i<wrd.length;i++){
+      if(!vowels.includes(wrd[i])){
+          //do nothing advance until vowel
+      }
+      else{
+        return wrd.substring(i)+wrd.substring(0,i)+"ay"
+      }
+    }
+
+  }
+
 
   // Your code here
 
