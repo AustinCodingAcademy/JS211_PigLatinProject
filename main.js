@@ -14,7 +14,22 @@ const rl = readline.createInterface({
 const pigLatin = (word) => {
 
   // Your code here
+let text = word.trim().toLowerCase()
+const vowels = ["a","e","i","o","u"]
+let newWord 
+if (vowels.includes(text[0])){
+  newWord = text + "yay"
+}
+else {
+    for (let i = 0; i < text.length; i++){
+    if (vowels.includes(text[i])) {
+      newWord = text.slice(i) + text.slice(0,i) + "ay"
+  break
+    }
+  }
+}
 
+return newWord
 }
 
 // the first function called in the program to get an input from the user
@@ -26,7 +41,7 @@ const getPrompt = () => {
     getPrompt();
   });
 }
-
+pigLatin("cat");
 // Unit Tests
 // to use them run the command: npm test main.js
 // to close them ctrl + C
