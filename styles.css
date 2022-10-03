@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  min-width: 80%;
+  min-height: 80%;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pigLatinContainer {
+  width: 50%;
+  height: 70%;
+  background-color: pink;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#pigLatinContainer > h1,
+p {
+  font-size: 50px;
+  margin: 20px 0 20px 0;
+}
+
+#display-element {
+  font-size: 40px;
+}
+
+#user-input {
+  margin: 20px 0 20px 0;
+}
