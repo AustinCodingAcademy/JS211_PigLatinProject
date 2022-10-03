@@ -1,14 +1,14 @@
 "use strict";
 
 // brings in the assert module for unit testing
-const assert = require("assert");
-// brings in the readline module to access the command line
-const readline = require("readline");
+// const assert = require("assert");
+// // brings in the readline module to access the command line
+// const readline = require("readline");
 // use the readline module to print out to the command line
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
 
 const pigLatin = (word) => {
   word = word.toLowerCase().trim();
@@ -39,7 +39,8 @@ const pigLatin = (word) => {
     firstConsonants = firstConsonants.join("");
     word = word.slice(2);
     word = word + firstConsonants + "ay";
-    return word;
+    document.getElementById("display-element").innerHTML = word;
+    // return word;
   } else if (
     word[0] != "a" &&
     word[0] != "e" &&
@@ -50,7 +51,8 @@ const pigLatin = (word) => {
     firstConsonants = wordArray.shift();
     word = word.slice(1);
     word = word + firstConsonants + "ay";
-    return word;
+    document.getElementById("display-element").innerHTML = word;
+    // return word;
   } else if (
     word[0] == "a" ||
     word[0] == "e" ||
@@ -59,19 +61,20 @@ const pigLatin = (word) => {
     word[0] == "u"
   ) {
     word = word + "yay";
-    return word;
+    document.getElementById("display-element").innerHTML = word;
+    // return word;
   }
 };
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
 // to close it ctrl + C
-const getPrompt = () => {
-  rl.question("word ", (answer) => {
-    console.log(pigLatin(answer));
-    getPrompt();
-  });
-};
+// const getPrompt = () => {
+//   rl.question("word ", (answer) => {
+//     console.log(pigLatin(answer));
+//     getPrompt();
+//   });
+// };
 
 // Unit Tests
 // to use them run the command: npm test main.js
@@ -96,7 +99,7 @@ if (typeof describe === "function") {
     });
   });
 } else {
-  getPrompt();
+  // getPrompt();
 }
 
 // **********
