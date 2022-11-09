@@ -1,10 +1,10 @@
 'use strict';
 
-// brings in the assert module for unit testing
+// // brings in the assert module for unit testing
 const assert = require('assert');
-// brings in the readline module to access the command line
+// // brings in the readline module to access the command line
 const readline = require('readline');
-// use the readline module to print out to the command line
+// // use the readline module to print out to the command line
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -12,19 +12,40 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
-
   // Your code here
-
+  
+  word = word.toLowerCase();
+  word = word.trim()
+ //vowels
+  const vowels = ["a", "e", "i", "o", "u"];
+  let newWord = '';
+//if and else staments + return
+  if (vowels.includes(word[0])) {
+    return word + "yay";
+  } else {
+    let arr = word.match(/[aeiou]/g) || 0;
+    let vIndex = word.indexOf(arr[0]);
+    newWord = word.slice(vIndex) + word.slice(0, vIndex) + 'ay';
+    return newWord
+  }
+  
 }
 
+pigLatin("")
+
+
+
+
+
 // the first function called in the program to get an input from the user
-// to run the function use the command: node main.js
+// // to run the function use the command: node main.js
 // to close it ctrl + C
 const getPrompt = () => {
   rl.question('word ', (answer) => {
     console.log( pigLatin(answer) );
     getPrompt();
   });
+  
 }
 
 // Unit Tests
@@ -55,6 +76,7 @@ if (typeof describe === 'function') {
   getPrompt();
 
 }
+
 
 
 
