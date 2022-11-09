@@ -14,6 +14,7 @@
 1. Ensure you know how to run the unit test:
     * `npm test main.js`
 1. Use a whiteboard to work out a solution to building the Pig Latin program
+1. Use a whiteboard to work out a solution to building the Pig Latin program
 1. Translate the broad ideas to pseudo code
 1. Convert the pseudo code to real JavaScript Code
 1. Type into your text editor the JavaScript code you've come up with one step at a time
