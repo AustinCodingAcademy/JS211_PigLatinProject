@@ -9,7 +9,24 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-
+/** takes a word (string) as an input
+* makes input lowercase and trim 
+*
+*
+*
+*FOR LOOP TO CHECK:
+* if word starts with consonant, remove 1st letter, move it to end, add ay
+* if word starts with 2 consonants, remove 1st 2 letters, put them at end, add ay
+* if word starts with a vowel, add yay
+* 
+* Start:
+* ==> Need array variable to hold consonant or vowels
+* ==> Less vowels to check, so start here.
+* Assumptions:
+*  vowels are a e i o u
+*
+*
+*/
 
 const pigLatin = (word) => {
 
