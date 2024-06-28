@@ -11,9 +11,46 @@ const rl = readline.createInterface({
 });
 
 
-const pigLatin = (word) => {
 
-  // Your code here
+const pigLatin = (word) => {
+word = word.toLowerCase().trim()
+
+console.log("Your first letter is " + word [0])
+
+
+let firstletter = word[0]
+let vowels = ["a", "e", "i", "o", "u"]
+let vowelPosition = 0
+
+//If it starts with a vowel just add "yay"
+
+if(vowels.includes( firstletter ) == true)
+{
+  return word + "yay"
+//it is a vowel
+}
+
+else{
+
+  //not a vowel
+
+  for (let index = 0; index < word.length; index = index + 1) {
+
+  if(vowels.includes(word[index])){
+
+vowelPosition = index
+
+break;
+  }
+//check each letter to see how many consonants there are in a row
+
+  }
+
+
+  let finalAnswer = word.slice(vowelPosition) + word.slice(0, vowelPosition) + "ay"
+  return finalAnswer
+
+}
 
 }
 
